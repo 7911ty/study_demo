@@ -35,7 +35,7 @@
             android:exported="false" />
 
         <receiver
-            android:name="com.example.studydemo.MyReceiver2"
+            android:name="com.example.studydemo.receiver.MyReceiver2"
             android:enabled="true"
             android:exported="true">
             <intent-filter android:priority="100">
@@ -51,7 +51,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.example.studydemo.MyReceiver"
+            android:name="com.example.studydemo.receiver.MyReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>

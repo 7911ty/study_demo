@@ -36,7 +36,6 @@ class StorageActivity1 : BaseActivity(),View.OnClickListener {
     }
 
     override fun initData() {
-
     }
 
     private fun readText():String {

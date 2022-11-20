@@ -68,9 +68,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract void initView();
 
     /**
-     * 设置数据
+     * 设置数据。不需要设置abstract，在不需要的地方不需要重写
      */
-    protected abstract void initData();
+    protected void initData(){};
 
     /**
      * 设置是否显示标题栏
