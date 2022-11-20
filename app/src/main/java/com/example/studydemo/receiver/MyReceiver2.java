@@ -14,6 +14,6 @@ public class MyReceiver2 extends BroadcastReceiver {
         Log.d(TAG, "onReceive: intentAction = " + intentAction);
         Toast.makeText(context,"接受到广播 received in MyReceiver2 , intentAction = " + intentAction,Toast.LENGTH_LONG).show();
         // 拦截广播
-//        abortBroadcast();
+        abortBroadcast();
     }
 }
