@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/studyAndroid/UIStudy/MyHW2/app/src/main/res/layout/activity_add_fragment.xml" value="0.24947916666666667" />
+        <entry key="..\:/studyAndroid/UIStudy/MyHW2/app/src/main/res/layout/activity_eventbus.xml" value="0.24947916666666667" />
+        <entry key="..\:/studyAndroid/UIStudy/MyHW2/app/src/main/res/layout/activity_eventbus_publish.xml" value="0.24947916666666667" />
+        <entry key="..\:/studyAndroid/UIStudy/MyHW2/app/src/main/res/layout/activity_recyclerview.xml" value="0.14628623188405798" />
+        <entry key="..\:/studyAndroid/UIStudy/MyHW2/app/src/main/res/layout/activity_storage1.xml" value="0.24947916666666667" />
+        <entry key="..\:/studyAndroid/UIStudy/MyHW2/app/src/main/res/layout/layout_recyclerview_item.xml" value="0.24947916666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="true" project-jdk-name="14" project-jdk-type="JavaSDK" />
+</project>

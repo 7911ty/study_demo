@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">StudyDemo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_multi_item_list_view">MultiItemListViewActivity</string>
+    <string name="title_activity_recycler_view">RecyclerViewActivity</string>
+    <string name="title_activity_multi_item_rv">MultiItemRvActivity</string>
+    <string name="title_activity_rv_width_header">RvWidthHeaderActivity</string>
+    <string name="current_mplitude">修改振幅: %1$s</string>
+    <string name="current_Disparity">修改振幅间隙, current: %1$s</string>
+    <string name="current_float_time">修改移动速度, current: %1$s</string>
+    <string name="current_rotate_time">修改转速, current: %1$s</string>
+    <string name="delete_progress_btn_text">清理进度</string>
+    <string name="increase_the_progress_btn_text">Increase the progress： </string>
+</resources>

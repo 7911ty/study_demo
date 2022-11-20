@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.studydemo">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 允许Glide监视连接状态，并在用户从断开连接到已连接网络的状态。 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 读写 -->
+    <uses-permission android:name="android.permission.PERMISSIONS_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Design.NoActionBar">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.cameratest.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="com.example.studydemo.ui.SecondActivity"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.example.studydemo.MyReceiver2"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="100">
+                <action android:name="com.example.myhw2.MY_RECEIVER" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.example.studydemo.ui.receiver.AnotherBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.myhw2.MY_RECEIVER" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.example.studydemo.MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.example.studydemo.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+        <activity android:name="com.example.studydemo.ui.listview.MyListViewActivity" />
+        <activity android:name="com.example.studydemo.ui.recyclerview.MyRecyclerViewActivity" />
+        <activity android:name="com.example.studydemo.ui.carema.CameraPermissions" />
+        <activity android:name="com.example.studydemo.ui.carema.PreviewActivity" />
+        <activity android:name="com.example.studydemo.ui.fragment.MyFragmentActivity" />
+        <activity android:name="com.example.studydemo.viewpage.ViewpageAndFragmentActivity" />
+        <activity android:name="com.example.studydemo.ui.eventbus.EventBusActivity1" />
+        <activity android:name="com.example.studydemo.ui.eventbus.EventBusActivity2" />
+        <activity android:name="com.example.studydemo.ui.receiver.MyBroadcastReceiverActivity" />
+        <activity android:name="com.example.studydemo.ui.recyclerview.MyBaseAdapterActivity" />
+        <activity android:name="com.example.studydemo.ui.eventbus.IntentMsgActivity1" />
+        <activity android:name="com.example.studydemo.ui.eventbus.IntentMsgActivity2" />
+        <activity android:name="com.example.studydemo.ui.camera.OpenCameraActivity" />
+        <activity android:name="com.example.studydemo.ui.camera.CameraActivity" />
+        <activity android:name="com.example.studydemo.ui.diyui.DiyViewActivity" />
+        <activity android:name="com.example.studydemo.ui.diyui.leafloading.LeafLoadingActivity" />
+        <activity android:name="com.example.studydemo.ui.okhttp.OkhttpActivity" />
+        <activity android:name=".ui.handler.HandlerActivity" />
+        <activity
+            android:name=".ui.diyui.suspension.Main2Activity"
+            android:launchMode="singleInstance" />
+
+        <service android:name=".ui.diyui.suspension.FloatWinfowServices" />
+
+        <activity android:name=".ui.fragment.addfragment.AddFragmentActivity" />
+        <activity android:name=".ui.storage.StorageActivity1" />
+    </application>
+
+</manifest>
