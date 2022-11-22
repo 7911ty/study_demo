@@ -6,13 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".ui.SecondActivity">
 
+    <com.example.studydemo.view.TitleSpaceView
+        android:id="@+id/title_space"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/sec_bt"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@color/red"
         android:text="拉起弹窗"
         android:textSize="20dp"
-        android:background="@color/red"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/title_space" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

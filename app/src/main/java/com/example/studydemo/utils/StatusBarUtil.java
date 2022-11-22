@@ -145,6 +145,7 @@ public class StatusBarUtil {
 
     //获取状态栏高度
     public static int getStatusBar(Activity activity) {
+
         int statusBarHeight = -1;
         //获取status_bar_height资源的ID
         int resourceId = activity.getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -171,6 +172,8 @@ public class StatusBarUtil {
             return;
         }
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+//        ViewGroup.MarginLayoutParams layoutParams =
+//                new ViewGroup.MarginLayoutParams(ViewGroup.MarginLayoutParams.MATCH_PARENT,ViewGroup.MarginLayoutParams.WRAP_CONTENT);
         layoutParams.topMargin = statusBar;
         view.setLayoutParams(layoutParams);
     }

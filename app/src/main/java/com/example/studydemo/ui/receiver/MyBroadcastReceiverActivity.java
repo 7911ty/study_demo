@@ -5,6 +5,7 @@ import android.widget.Button;
 
 import com.example.studydemo.R;
 import com.example.studydemo.base.BaseActivity;
+import com.example.studydemo.utils.StatusBarUtil;
 
 /**
  * 广播
@@ -17,7 +18,8 @@ public class MyBroadcastReceiverActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        this.setShowTitle(true);
+        StatusBarUtil.setTranslucentStatus(this);
+        StatusBarUtil.setAndroidNativeLightStatusBar(this, true);
         Button broadcast_receiver_btn = findViewById(R.id.broadcast_receiver_btn);
         broadcast_receiver_btn.setOnClickListener(v -> {
             Intent intent = new Intent("com.example.myhw2.MY_RECEIVER");
@@ -29,5 +31,10 @@ public class MyBroadcastReceiverActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+    }
+
+    @Override
+    protected String initTitleText() {
+        return "广播";
     }
 }

@@ -6,13 +6,16 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Looper;
 import android.view.View;
-import android.view.Window;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.studydemo.utils.StatusBarUtil;
+import com.example.studydemo.view.MyTitleView;
 
 public abstract class BaseActivity extends AppCompatActivity {
     //获取TAG的activity名称
@@ -25,6 +28,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     private boolean isAllowScreenRoate = true;
     //封装Toast对象
     private static Toast toast;
+    // 标题
+    private static MyTitleView myTitleView;
 
     public Context context;
 
@@ -34,15 +39,19 @@ public abstract class BaseActivity extends AppCompatActivity {
         context = this;
         //activity管理
         ActivityCollector.addActivity(this);
-        if (!isShowTitle) {
-            requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //设置布局
+        setContentView(initLayout());
+        if (isShowTitle) {
+            ViewGroup viewGroup = getWindow().getDecorView().findViewById(android.R.id.content);
+            MyTitleView myTitleView = new MyTitleView(this);
+            myTitleView.setText(initTitleText());
+            viewGroup.addView(myTitleView);
+            StatusBarUtil.setActivityViewInBarBottom(this, myTitleView);
         }
-        if (isShowStatusBar) {
+        if (!isShowStatusBar) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN
                     , WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
-        //设置布局
-        setContentView(initLayout());
         //设置屏幕是否可旋转
         if (!isAllowScreenRoate) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -67,10 +76,15 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected abstract void initView();
 
+    protected String initTitleText(){
+        return "";
+    }
+
     /**
      * 设置数据。不需要设置abstract，在不需要的地方不需要重写
      */
-    protected void initData(){};
+    protected void initData() {
+    }
 
     /**
      * 设置是否显示标题栏
