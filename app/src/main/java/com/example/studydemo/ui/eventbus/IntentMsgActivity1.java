@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 
 import com.example.studydemo.R;
 import com.example.studydemo.base.BaseActivity;
+import com.example.studydemo.utils.StatusBarUtil;
 
 /**
  * 使用intent进行activity之间进行传值
@@ -26,6 +27,9 @@ public class IntentMsgActivity1 extends BaseActivity {
 
     @Override
     protected void initView() {
+        // 处理通知栏
+        StatusBarUtil.setTranslucentStatus(this);
+        StatusBarUtil.setAndroidNativeLightStatusBar(this, false);
         ActivityResultLauncher<Intent> intentActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
                 result -> {
                     Intent data = result.getData();

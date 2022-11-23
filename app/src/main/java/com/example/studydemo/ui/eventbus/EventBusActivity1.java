@@ -8,6 +8,7 @@ import android.widget.EditText;
 import com.example.studydemo.R;
 import com.example.studydemo.base.BaseActivity;
 import com.example.studydemo.bean.MessageWrap;
+import com.example.studydemo.utils.StatusBarUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -24,6 +25,9 @@ public class EventBusActivity1 extends BaseActivity {
 
     @Override
     protected void initView() {
+        // 处理通知栏
+        StatusBarUtil.setTranslucentStatus(this);
+        StatusBarUtil.setAndroidNativeLightStatusBar(this, false);
         if (!EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().register(this);
         }

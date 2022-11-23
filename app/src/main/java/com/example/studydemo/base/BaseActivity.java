@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Looper;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -44,7 +45,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (isShowTitle) {
             ViewGroup viewGroup = getWindow().getDecorView().findViewById(android.R.id.content);
             MyTitleView myTitleView = new MyTitleView(this);
-            myTitleView.setText(initTitleText());
+            String title = initTitleText();
+            myTitleView.setText(TextUtils.isEmpty(title) ? this.getClass().getSimpleName() : title);
             viewGroup.addView(myTitleView);
             StatusBarUtil.setActivityViewInBarBottom(this, myTitleView);
         }
@@ -76,7 +78,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected abstract void initView();
 
-    protected String initTitleText(){
+    protected String initTitleText() {
         return "";
     }
 

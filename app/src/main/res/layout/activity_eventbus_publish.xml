@@ -3,16 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.example.studydemo.view.TitleSpaceView
+        android:id="@+id/title_space"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/edit_text"
-        android:hint="IntentMsgActivity2 : 内容"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:layout_below="@+id/title_space"
+        android:hint="IntentMsgActivity2 : 内容" />
 
     <Button
-        android:layout_below="@+id/edit_text"
         android:id="@+id/set_btn"
-        android:text="发送数据"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text"
+        android:text="发送数据" />
 </RelativeLayout>
