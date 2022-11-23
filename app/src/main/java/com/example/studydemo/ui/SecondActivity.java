@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.example.studydemo.R;
 import com.example.studydemo.base.BaseActivity;
+import com.example.studydemo.utils.StatusBarUtil;
 
 public class SecondActivity extends BaseActivity {
 
@@ -18,6 +19,8 @@ public class SecondActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        StatusBarUtil.setTranslucentStatus(this);
+        StatusBarUtil.setAndroidNativeLightStatusBar(this, true);
         viewById = findViewById(R.id.sec_bt);
     }
 

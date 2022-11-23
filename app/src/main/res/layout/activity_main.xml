@@ -6,91 +6,12 @@
     android:background="@color/purple_200"
     android:orientation="vertical"
     tools:context=".MainActivity">
+    <com.example.studydemo.view.TitleSpaceView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/main_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
-<!--    <Button-->
-<!--        android:id="@+id/listview_bt"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:background="@color/purple_700"-->
-<!--        android:text="List View"-->
-<!--        android:textAllCaps="false" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/recyclerview_bt"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:background="@color/read"-->
-<!--        android:text="ecycler View"-->
-<!--        android:textAllCaps="false" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/bt_3_camera"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:background="@color/read"-->
-<!--        android:text="获取相机权限"-->
-<!--        android:textAllCaps="false" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/bt_4_fragment"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:background="@color/black"-->
-<!--        android:text="fragment学习"-->
-<!--        android:textAllCaps="false" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/bt_5_viewpage"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:background="@color/read"-->
-<!--        android:text="viewpage和fragment"-->
-<!--        android:textAllCaps="false" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/bt_6_eventbus"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:background="#624EBA"-->
-<!--        android:text="eventbus"-->
-<!--        android:textAllCaps="false" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/bt_7_broadcast_receiver"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:background="#624EBA"-->
-<!--        android:text="bt_7_broadcast_receiver"-->
-<!--        android:textAllCaps="false" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/bt_8_baseadapter"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:background="#629EBA"-->
-<!--        android:text="bt_8_baseadapter"-->
-<!--        android:textAllCaps="false" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/bt_9_dialog"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:background="#627EBA"-->
-<!--        android:text="bt_9_dialog"-->
-<!--        android:textAllCaps="false" />-->
-
 </LinearLayout>

@@ -7,9 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.studydemo.R;
+import com.example.studydemo.utils.ColorUtil;
 
 /**
  * 标题
@@ -36,6 +38,8 @@ public class MyTitleView extends LinearLayout {
     private void initView() {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.my_title_view, this, false);
         titleBar = view.findViewById(R.id.my_title_view);
+        RelativeLayout titleRoot = view.findViewById(R.id.title_root);
+        titleRoot.setBackgroundColor(ColorUtil.getColorByRgb(null));
         ImageView blackIv = view.findViewById(R.id.black_iv);
         blackIv.setOnClickListener(view1 -> mContent.finish());
         addView(view);
