@@ -20,6 +20,16 @@
         android:roundIcon="@drawable/ic_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
+        <activity
+            android:name=".ui.coordinatorlayout.AppbarAndScrollActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.coordinatorlayout.MyCoordinatorLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.coordinatorlayout.BehaviorStudyActivity"
+            android:exported="false" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.cameratest.fileprovider"

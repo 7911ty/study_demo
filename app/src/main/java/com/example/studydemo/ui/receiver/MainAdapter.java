@@ -14,6 +14,7 @@ import com.example.studydemo.bean.MainBean;
 import com.example.studydemo.ui.SecondActivity;
 import com.example.studydemo.ui.camera.OpenCameraActivity;
 import com.example.studydemo.ui.carema.CameraPermissions;
+import com.example.studydemo.ui.coordinatorlayout.MyCoordinatorLayoutActivity;
 import com.example.studydemo.ui.diyui.DiyViewActivity;
 import com.example.studydemo.ui.diyui.leafloading.LeafLoadingActivity;
 import com.example.studydemo.ui.diyui.suspension.Main2Activity;
@@ -25,7 +26,6 @@ import com.example.studydemo.ui.listview.MyListViewActivity;
 import com.example.studydemo.ui.okhttp.OkhttpActivity;
 import com.example.studydemo.ui.recyclerview.MyBaseAdapterActivity;
 import com.example.studydemo.ui.recyclerview.MyRecyclerViewActivity;
-import com.example.studydemo.ui.coordinatorlayout.CoordinatorLayoutActivity;
 import com.example.studydemo.ui.storage.StorageActivity1;
 import com.example.studydemo.utils.ColorUtil;
 import com.example.studydemo.viewpage.ViewpageAndFragmentActivity;
@@ -118,8 +118,8 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
                         case "bt_16_storage":
                             intent = new Intent(mContext, StorageActivity1.class);
                             break;
-                        case "bt_17_status_bar":
-                            intent = new Intent(mContext, CoordinatorLayoutActivity.class);
+                        case "bt_17_mycoordinator":
+                            intent = new Intent(mContext, MyCoordinatorLayoutActivity.class);
                             break;
                     }
                     mContext.startActivity(intent);

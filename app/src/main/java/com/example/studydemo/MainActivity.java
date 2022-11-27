@@ -104,7 +104,7 @@ public class MainActivity extends BaseActivity {
         mainBean.setName("bt_16_storage");
         arrayList.add(mainBean);
         mainBean = new MainBean();
-        mainBean.setName("bt_17_status_bar");
+        mainBean.setName("bt_17_mycoordinator");
         arrayList.add(mainBean);
         MainAdapter mainAdapter = new MainAdapter(this, arrayList);
         main_rv.setLayoutManager(new LinearLayoutManager(this));
