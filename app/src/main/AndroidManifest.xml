@@ -67,6 +67,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
@@ -97,6 +98,7 @@
 
         <activity android:name=".ui.fragment.addfragment.AddFragmentActivity" />
         <activity android:name=".ui.storage.StorageActivity1" />
+        <activity android:name=".ui.coordinatorlayout.CoordinatorLayoutActivity" />
     </application>
 
 </manifest>

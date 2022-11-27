@@ -21,7 +21,7 @@ public class StatusBarUtil {
     private static final String TAG = "StatusBarUtil";
 
     /**
-     * 设置状态栏为透明
+     * 设置状态栏为透明,并且可以实现沉浸式状态栏
      *
      * @param activity
      */
@@ -144,7 +144,6 @@ public class StatusBarUtil {
 
     //获取状态栏高度
     public static int getStatusBar(Activity activity) {
-
         int statusBarHeight = -1;
         //获取status_bar_height资源的ID
         int resourceId = activity.getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -160,19 +159,21 @@ public class StatusBarUtil {
         if (statusBarHeight == 0) {
             statusBarHeight = activity.getResources().getDimensionPixelOffset(R.dimen.status_bar_height);
         }
-        Log.e(TAG, "状态栏高度:" + statusBarHeight);
+        Log.d(TAG, "状态栏高度: " + statusBarHeight);
         return statusBarHeight;
     }
 
-    // 设置页面中view在状态栏之下
+    /**
+     * 设置页面中view在状态栏之下
+     * @param activity activity
+     * @param view view
+     */
     public static void setActivityViewInBarBottom(Activity activity, View view) {
         int statusBar = getStatusBar(activity);
-        if (view == null ){
+        if (view == null) {
             return;
         }
         ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-//        ViewGroup.MarginLayoutParams layoutParams =
-//                new ViewGroup.MarginLayoutParams(ViewGroup.MarginLayoutParams.MATCH_PARENT,ViewGroup.MarginLayoutParams.WRAP_CONTENT);
         layoutParams.topMargin = statusBar;
         view.setLayoutParams(layoutParams);
     }

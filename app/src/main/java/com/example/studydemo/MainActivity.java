@@ -34,7 +34,6 @@ public class MainActivity extends BaseActivity {
     // 初始化view
     protected void initView() {
         // 处理通知栏
-        StatusBarUtil.setTranslucentStatus(this);
         StatusBarUtil.setAndroidNativeLightStatusBar(this, false);
         StatusBarUtil.setStatusBarColor(this, R.color.purple_200);
         main_rv = findViewById(R.id.main_rv);
@@ -103,6 +102,9 @@ public class MainActivity extends BaseActivity {
         arrayList.add(mainBean);
         mainBean = new MainBean();
         mainBean.setName("bt_16_storage");
+        arrayList.add(mainBean);
+        mainBean = new MainBean();
+        mainBean.setName("bt_17_status_bar");
         arrayList.add(mainBean);
         MainAdapter mainAdapter = new MainAdapter(this, arrayList);
         main_rv.setLayoutManager(new LinearLayoutManager(this));

@@ -25,7 +25,9 @@ import com.example.studydemo.ui.listview.MyListViewActivity;
 import com.example.studydemo.ui.okhttp.OkhttpActivity;
 import com.example.studydemo.ui.recyclerview.MyBaseAdapterActivity;
 import com.example.studydemo.ui.recyclerview.MyRecyclerViewActivity;
+import com.example.studydemo.ui.coordinatorlayout.CoordinatorLayoutActivity;
 import com.example.studydemo.ui.storage.StorageActivity1;
+import com.example.studydemo.utils.ColorUtil;
 import com.example.studydemo.viewpage.ViewpageAndFragmentActivity;
 
 import java.util.List;
@@ -55,6 +57,7 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
         public void convert(ViewHolder holder, MainBean mainBean, int position) {
             Button button = holder.itemView.findViewById(R.id.main_bt);
             button.setText(mainBean.getName());
+            button.setBackgroundColor(ColorUtil.getColorByRgb(""));
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -114,6 +117,9 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
                             break;
                         case "bt_16_storage":
                             intent = new Intent(mContext, StorageActivity1.class);
+                            break;
+                        case "bt_17_status_bar":
+                            intent = new Intent(mContext, CoordinatorLayoutActivity.class);
                             break;
                     }
                     mContext.startActivity(intent);

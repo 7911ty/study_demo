@@ -30,7 +30,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     //封装Toast对象
     private static Toast toast;
     // 标题
-    private static MyTitleView myTitleView;
+    protected MyTitleView myTitleView;
 
     public Context context;
 
@@ -44,11 +44,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(initLayout());
         if (isShowTitle) {
             ViewGroup viewGroup = getWindow().getDecorView().findViewById(android.R.id.content);
-            MyTitleView myTitleView = new MyTitleView(this);
+            myTitleView = new MyTitleView(this);
             String title = initTitleText();
             myTitleView.setText(TextUtils.isEmpty(title) ? this.getClass().getSimpleName() : title);
             viewGroup.addView(myTitleView);
             StatusBarUtil.setActivityViewInBarBottom(this, myTitleView);
+            StatusBarUtil.setTranslucentStatus(this);
         }
         if (!isShowStatusBar) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN

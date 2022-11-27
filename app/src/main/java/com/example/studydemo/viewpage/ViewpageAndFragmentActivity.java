@@ -11,6 +11,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.example.studydemo.R;
 import com.example.studydemo.base.BaseActivity;
 import com.example.studydemo.ui.fragment.BlankFragment;
+import com.example.studydemo.utils.StatusBarUtil;
 
 import java.util.ArrayList;
 
@@ -27,6 +28,8 @@ public class ViewpageAndFragmentActivity extends BaseActivity implements View.On
 
     @Override
     protected void initView() {
+        StatusBarUtil.setTranslucentStatus(this);
+        StatusBarUtil.setAndroidNativeLightStatusBar(this, true);
         viewPager2 = findViewById(R.id.viewpage_id);
         ArrayList<Fragment> fragments = new ArrayList<>();
         BlankFragment weixinFragment = BlankFragment.newInstance("weixin");
