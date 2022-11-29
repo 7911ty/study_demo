@@ -23,7 +23,7 @@ import com.example.studydemo.ui.eventbus.IntentMsgActivity1;
 import com.example.studydemo.ui.fragment.MyFragmentActivity;
 import com.example.studydemo.ui.handler.HandlerActivity;
 import com.example.studydemo.ui.listview.MyListViewActivity;
-import com.example.studydemo.ui.okhttp.OkhttpActivity;
+import com.example.studydemo.ui.okhttp.NetworkActivity;
 import com.example.studydemo.ui.recyclerview.MyBaseAdapterActivity;
 import com.example.studydemo.ui.recyclerview.MyRecyclerViewActivity;
 import com.example.studydemo.ui.storage.StorageActivity1;
@@ -107,7 +107,7 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
                             intent = new Intent(mContext, LeafLoadingActivity.class);
                             break;
                         case "bt_13_okhttp":
-                            intent = new Intent(mContext, OkhttpActivity.class);
+                            intent = new Intent(mContext, NetworkActivity.class);
                             break;
                         case "bt_14_xuanfuchuang":
                             intent = new Intent(mContext, Main2Activity.class);

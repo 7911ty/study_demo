@@ -21,6 +21,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
+            android:name=".ui.okhttp.NetworkActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.okhttp.MyWebViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.coordinatorlayout.AppbarAndScrollActivity"
             android:exported="false" />
         <activity
@@ -98,7 +104,7 @@
         <activity android:name="com.example.studydemo.ui.camera.CameraActivity" />
         <activity android:name="com.example.studydemo.ui.diyui.DiyViewActivity" />
         <activity android:name="com.example.studydemo.ui.diyui.leafloading.LeafLoadingActivity" />
-        <activity android:name="com.example.studydemo.ui.okhttp.OkhttpActivity" />
+        <activity android:name=".OkhttpActivity" />
         <activity android:name=".ui.handler.HandlerActivity" />
         <activity
             android:name=".ui.diyui.suspension.Main2Activity"
