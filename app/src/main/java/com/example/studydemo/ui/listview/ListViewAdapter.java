@@ -33,24 +33,26 @@ public class ListViewAdapter extends BaseAdapter {
     public long getItemId(int position) {
         return 0;
     }
-    static class ViewHolder{
+
+    static class ViewHolder {
         public ImageView imageView;
         public TextView tv_title;
         public TextView tv_time;
         public TextView tv_content;
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
-        if (convertView == null){
-            convertView = layoutInflater.inflate(R.layout.layout_listview_item,null);
+        if (convertView == null) {
+            convertView = layoutInflater.inflate(R.layout.layout_listview_item, null);
             holder = new ViewHolder();
             holder.imageView = convertView.findViewById(R.id.listview_iv);
             holder.tv_title = convertView.findViewById(R.id.listview_title);
             holder.tv_time = convertView.findViewById(R.id.listview_time);
             holder.tv_content = convertView.findViewById(R.id.listview_content);
             convertView.setTag(holder);
-        }else {
+        } else {
             holder = (ViewHolder) convertView.getTag();
         }
         holder.tv_title.setText("111");

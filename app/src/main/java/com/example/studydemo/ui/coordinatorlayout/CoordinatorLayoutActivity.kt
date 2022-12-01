@@ -9,6 +9,7 @@ import com.example.studydemo.R
 import com.example.studydemo.adapter.CoordinatorLayoutAdapter
 import com.example.studydemo.base.BaseActivity
 import com.example.studydemo.bean.coordinator.CoordinatorBean
+import com.example.studydemo.utils.StatusBarUtil
 import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.activity_coordinatorlayout.*
 import java.lang.Math.abs
@@ -29,25 +30,22 @@ class CoordinatorLayoutActivity : BaseActivity() {
     private fun initRecyclerView() {
         recyclerview.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        var arrayListOf = arrayListOf<CoordinatorBean>()
         for (i in 1..10) {
-
-        }
-        recyclerview.adapter = CoordinatorLayoutAdapter(
-            this, arrayListOf(
-                CoordinatorBean("title 1", "https://images.pexels.com/photos/14437081/pexels-photo-14437081.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"),
-                CoordinatorBean("title 1", "https://images.pexels.com/photos/14437083/pexels-photo-14437083.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"),
-                CoordinatorBean("title 1", "https://images.pexels.com/photos/14437084/pexels-photo-14437084.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"),
-                CoordinatorBean("title 1", "https://images.pexels.com/photos/14437085/pexels-photo-14437085.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"),
-                CoordinatorBean("title 1", "https://images.pexels.com/photos/14437086/pexels-photo-14437086.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"),
-                CoordinatorBean("title 1", "https://images.pexels.com/photos/14437087/pexels-photo-14437087.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")
+            arrayListOf.add(
+                CoordinatorBean(
+                    "title $i",
+                    "http://unsplash.it/1080/" + (2000 + i) + "?random"
+                )
             )
-        )
+        }
+        recyclerview.adapter = CoordinatorLayoutAdapter(this, arrayListOf)
     }
 
     private fun initTopImageView(): ImageView? {
         val imageView = findViewById<ImageView>(R.id.imageview)
         Glide.with(this)
-            .load("https://images.pexels.com/photos/14437082/pexels-photo-14437082.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")
+            .load("http://unsplash.it/1080/680?random")
             .into(imageView)
 
         return imageView
@@ -69,9 +67,11 @@ class CoordinatorLayoutActivity : BaseActivity() {
             imageView.alpha = alpha
             if (alpha > 0.8f) {
                 myTitleView.visibility = ViewGroup.GONE
+                StatusBarUtil.setAndroidNativeLightStatusBar(this, false);
             } else {
                 myTitleView.visibility = ViewGroup.VISIBLE
                 myTitleView.alpha = percent
+                StatusBarUtil.setAndroidNativeLightStatusBar(this, true);
             }
         })
     }

@@ -56,6 +56,9 @@ public class MainActivity extends BaseActivity {
     protected void initData() {
         ArrayList<MainBean> arrayList = new ArrayList();
         MainBean mainBean = new MainBean();
+        mainBean.setName("listview_bt");
+        arrayList.add(mainBean);
+        mainBean = new MainBean();
         mainBean.setName("recyclerview_bt");
         arrayList.add(mainBean);
         mainBean = new MainBean();
