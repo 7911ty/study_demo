@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.biji.MyBiJiActivity;
 import com.example.studydemo.R;
 import com.example.studydemo.base.baseadapter.MultiItemTypeAdapter;
 import com.example.studydemo.base.baseadapter.base.ItemViewDelegate;
@@ -25,7 +26,6 @@ import com.example.studydemo.ui.handler.HandlerActivity;
 import com.example.studydemo.ui.listview.MyListViewActivity;
 import com.example.studydemo.ui.okhttp.NetworkActivity;
 import com.example.studydemo.ui.recyclerview.MyBaseAdapterActivity;
-import com.example.studydemo.ui.recyclerview.MyRecyclerViewActivity;
 import com.example.studydemo.ui.storage.StorageActivity1;
 import com.example.studydemo.utils.ColorUtil;
 import com.example.studydemo.viewpage.ViewpageAndFragmentActivity;
@@ -70,8 +70,8 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
                         case "listview_bt":
                             intent = new Intent(mContext, MyListViewActivity.class);
                             break;
-                        case "recyclerview_bt":
-                            intent = new Intent(mContext, MyRecyclerViewActivity.class);
+                        case "笔记":
+                            intent = new Intent(mContext, MyBiJiActivity.class);
                             break;
                         case "bt_3_camera":
                             intent = new Intent(mContext, CameraPermissions.class);

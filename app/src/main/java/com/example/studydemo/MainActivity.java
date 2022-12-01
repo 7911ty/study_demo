@@ -59,7 +59,7 @@ public class MainActivity extends BaseActivity {
         mainBean.setName("listview_bt");
         arrayList.add(mainBean);
         mainBean = new MainBean();
-        mainBean.setName("recyclerview_bt");
+        mainBean.setName("笔记");
         arrayList.add(mainBean);
         mainBean = new MainBean();
         mainBean.setName("bt_camera");
