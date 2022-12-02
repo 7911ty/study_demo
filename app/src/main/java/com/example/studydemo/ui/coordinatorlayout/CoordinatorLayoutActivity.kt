@@ -9,7 +9,6 @@ import com.example.studydemo.R
 import com.example.studydemo.adapter.CoordinatorLayoutAdapter
 import com.example.studydemo.base.BaseActivity
 import com.example.studydemo.bean.coordinator.CoordinatorBean
-import com.example.studydemo.utils.StatusBarUtil
 import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.activity_coordinatorlayout.*
 import java.lang.Math.abs
@@ -67,11 +66,11 @@ class CoordinatorLayoutActivity : BaseActivity() {
             imageView.alpha = alpha
             if (alpha > 0.8f) {
                 myTitleView.visibility = ViewGroup.GONE
-                StatusBarUtil.setAndroidNativeLightStatusBar(this, false);
+                com.example.base.utils.StatusBarUtil.setAndroidNativeLightStatusBar(this, false);
             } else {
                 myTitleView.visibility = ViewGroup.VISIBLE
                 myTitleView.alpha = percent
-                StatusBarUtil.setAndroidNativeLightStatusBar(this, true);
+                com.example.base.utils.StatusBarUtil.setAndroidNativeLightStatusBar(this, true);
             }
         })
     }

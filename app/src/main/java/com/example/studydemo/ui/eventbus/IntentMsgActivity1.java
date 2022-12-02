@@ -11,9 +11,9 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 
+import com.example.base.utils.StatusBarUtil;
 import com.example.studydemo.R;
 import com.example.studydemo.base.BaseActivity;
-import com.example.studydemo.utils.StatusBarUtil;
 
 /**
  * 使用intent进行activity之间进行传值

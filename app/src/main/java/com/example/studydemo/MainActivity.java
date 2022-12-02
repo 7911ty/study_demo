@@ -9,10 +9,10 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.base.utils.StatusBarUtil;
 import com.example.studydemo.base.BaseActivity;
 import com.example.studydemo.bean.MainBean;
 import com.example.studydemo.ui.receiver.MainAdapter;
-import com.example.studydemo.utils.StatusBarUtil;
 
 import java.util.ArrayList;
 

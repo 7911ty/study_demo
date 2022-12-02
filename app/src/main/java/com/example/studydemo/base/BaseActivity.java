@@ -15,8 +15,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.studydemo.utils.StatusBarUtil;
-import com.example.studydemo.view.MyTitleView;
+import com.example.base.utils.StatusBarUtil;
+import com.example.base.view.MyTitleView;
 
 public abstract class BaseActivity extends AppCompatActivity {
     //获取TAG的activity名称

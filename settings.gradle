@@ -10,3 +10,4 @@ dependencyResolutionManagement {
 rootProject.name = "MyHW2"
 include ':app'
 include ':biji'
+include ':base'

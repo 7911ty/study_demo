@@ -4,11 +4,12 @@
 
     <application>
         <activity
-            android:name=".MyBiJiActivity"
-            android:exported="true">
-
-        </activity>
-        <activity android:name=".EditActivity" />
+            android:name=".ui.SearchNoteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MyBiJiActivity"
+            android:exported="true" />
+        <activity android:name=".ui.NoteEditActivity" />
     </application>
 
 </manifest>

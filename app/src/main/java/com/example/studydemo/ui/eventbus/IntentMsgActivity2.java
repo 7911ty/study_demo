@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.base.utils.StatusBarUtil;
 import com.example.studydemo.R;
 import com.example.studydemo.base.BaseActivity;
-import com.example.studydemo.utils.StatusBarUtil;
 
 public class IntentMsgActivity2 extends BaseActivity {
 

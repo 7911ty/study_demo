@@ -5,10 +5,10 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.base.utils.StatusBarUtil;
 import com.example.studydemo.R;
 import com.example.studydemo.base.BaseActivity;
 import com.example.studydemo.bean.MessageWrap;
-import com.example.studydemo.utils.StatusBarUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

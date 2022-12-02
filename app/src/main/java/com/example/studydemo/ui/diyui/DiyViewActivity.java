@@ -5,8 +5,8 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.base.utils.BaseUtils;
 import com.example.studydemo.R;
-import com.example.studydemo.utils.BaseUtils;
 
 public class DiyViewActivity extends AppCompatActivity {
     private static final String TAG = "DiyViewActivity";

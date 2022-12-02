@@ -2,23 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/edit_title_tb"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:elevation="4dp"
-        app:titleTextColor="?attr/titleColor"
-        android:theme="?attr/toolbarTheme"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+    <com.example.base.view.TitleSpaceView
+        android:id="@+id/title_space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <EditText
-        android:gravity="top"
-
         android:id="@+id/biji_et"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:gravity="top" />
 
 </LinearLayout>

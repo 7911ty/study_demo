@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.studydemo.R
 import com.example.studydemo.base.BaseActivity
-import com.example.studydemo.utils.StatusBarUtil
+import com.example.base.utils.StatusBarUtil
 import kotlinx.android.synthetic.main.activity_storage1.*
 import java.io.BufferedReader
 import java.io.BufferedWriter
@@ -21,8 +21,8 @@ class StorageActivity1 : BaseActivity(),View.OnClickListener {
     }
 
     override fun initView() {
-        StatusBarUtil.setTranslucentStatus(this)
-        StatusBarUtil.setAndroidNativeLightStatusBar(this, true)
+        com.example.base.utils.StatusBarUtil.setTranslucentStatus(this)
+        com.example.base.utils.StatusBarUtil.setAndroidNativeLightStatusBar(this, true)
         val saveButton = findViewById<Button>(R.id.save_bt)
         val read_bt = findViewById<Button>(R.id.read_bt)
         val textView = findViewById<TextView>(R.id.show_text_tv)
