@@ -11,7 +11,6 @@ import java.util.List;
 public class SearchNoteAdapter extends MultiItemTypeAdapter {
     public SearchNoteAdapter(Context context, List datas) {
         super(context, datas);
-
         addItemViewDelegate(new ItemViewDelegate() {
             @Override
             public int getItemViewLayoutId() {

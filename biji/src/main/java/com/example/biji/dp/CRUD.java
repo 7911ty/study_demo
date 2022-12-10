@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CRUD {
+    private static final String TAG = "CRUD";
     SQLiteOpenHelper dbHandler;
     SQLiteDatabase db;
 
@@ -78,6 +79,7 @@ public class CRUD {
     public int updateNote(Note note) {
         //update the info of an existing note
         ContentValues values = new ContentValues();
+        values.put(NoteDatabase.ID, note.getId());
         values.put(NoteDatabase.CONTENT, note.getContent());
         values.put(NoteDatabase.TIME, note.getTime());
         values.put(NoteDatabase.MODE, note.getTag());
@@ -115,40 +117,4 @@ public class CRUD {
         }
         return notes;
     }
-//    // 根据条件模糊查询数据库数据
-//    public ArrayList<String> query(int top_int, String... str) {
-//        ArrayList<String> result_list = new ArrayList<String>();
-//        mDatabase = getReadableDatabase();
-//        //模糊查询的三种方式：
-///*
-// * 全部查询
-//        String current_sql_sel = "SELECT  * FROM " + tab_name;
-//        Cursor c = mDatabase.rawQuery(current_sql_sel, null);*/
-//
-//        //1.使用这种query方法%号前不能加' ;
-//        Cursor c_test = mDatabase.query(tab_name, new String[]{tab_field02}, tab_field02+"  LIKE ? ",
-//                new String[] { "%" + str[0] + "%" }, null, null, null);
-//
-//        //2.使用这种query方法%号前必须加'  ;
-//        //  Cursor  c_test=mDatabase.query(tab_name, new String[]{tab_field02},tab_field02+"  like '%" + str[0] + "%'", null, null, null, null);
-//
-//        //3.使用这种方式必须在%号前加'  ;
-//        String current_sql_sel = "SELECT  * FROM "+tab_name +" where "+tab_field02+" like '%"+str[0]+"%'";
-//        //Cursor c_test = mDatabase.rawQuery(current_sql_sel, null);
-//
-//        Log.e("tag", "查询完成...");
-//        while (c_test.moveToNext()) {
-//            String name = c_test.getString(c_test.getColumnIndex(tab_field02));
-//            //name.contains(str[0]);
-//            // 让集合中的数据不重复;
-//            if (!result_list.contains(name)) {
-//                result_list.add(name);
-//                Log.e("tag", name);
-//            }
-//        }
-//        c_test.close();
-//
-//        return result_list;
-//    }
-
 }

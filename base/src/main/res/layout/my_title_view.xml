@@ -8,8 +8,8 @@
         android:id="@+id/black_iv"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:src="@drawable/ic_back"
-        android:padding="14dp"/>
+        android:padding="14dp"
+        android:src="@drawable/ic_back" />
 
     <TextView
         android:id="@+id/my_title_view"

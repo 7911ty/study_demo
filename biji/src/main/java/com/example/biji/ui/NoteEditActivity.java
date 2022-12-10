@@ -1,15 +1,14 @@
 package com.example.biji.ui;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.KeyEvent;
-import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
 import com.example.base.ui.BaseActivity;
+import com.example.base.view.MyTitleView;
 import com.example.biji.R;
 
 import java.text.SimpleDateFormat;
@@ -37,19 +36,9 @@ public class NoteEditActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
-//        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                autoSetMassage();
-//                setResult(RESULT_OK, intent);
-//                finish();
-//            }
-//        });
-
+        initTitleBar();
         editText = findViewById(R.id.biji_et);
         Intent getIntent = getIntent();
-
         openMode = getIntent.getIntExtra("mode", 0);
         if (openMode == 3) {
             id = getIntent.getLongExtra("id", 0);
@@ -61,42 +50,38 @@ public class NoteEditActivity extends BaseActivity {
         }
     }
 
-//    //创建删除菜单
-//    @Override
-//    public boolean onCreatePanelMenu(int featureId, @NonNull Menu menu) {
-//        getMenuInflater().inflate(R.menu.edit_menu, menu);
-//        return super.onCreatePanelMenu(featureId, menu);
-//    }
+    private void initTitleBar() {
+        myTitleView.setTitleClickListener(new MyTitleView.TitleClickListener() {
+            @Override
+            public void blackClick() {
+                autoSetMassage();
+                setResult(RESULT_OK, intent);
+                finish();
+            }
+            @Override
+            public void right2Click() {
+                showDelegateDialog();
+            }
+        });
+        myTitleView.setRight1Visibility(View.GONE);
+    }
 
-    //点击删除菜单时
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.delete) {//deleteEdit(id);
-            new AlertDialog.Builder(NoteEditActivity.this)
-                    .setMessage("确定删除？")
-                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            if (openMode == 4) {
-                                //新打开的edit
-                                intent.putExtra("mode", "-1");
-                            } else {
-                                intent.putExtra("mode", 2);//删除笔记
-                                intent.putExtra("id", id);
-                            }
-                            setResult(RESULT_OK, intent);
-                            finish();
-                        }
-                    })
-                    .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    })
-                    .create().show();
-        }
-        return super.onOptionsItemSelected(item);
+    private void showDelegateDialog() {
+        new AlertDialog.Builder(NoteEditActivity.this)
+                .setMessage("确定删除？")
+                .setPositiveButton("确定", (dialog, which) -> {
+                    if (openMode == 4) {
+                        //新打开的edit
+                        intent.putExtra("mode", "-1");
+                    } else {
+                        intent.putExtra("mode", 2);//删除笔记
+                        intent.putExtra("id", id);
+                    }
+                    setResult(RESULT_OK, intent);
+                    finish();
+                })
+                .setNegativeButton("取消", (dialog, which) -> dialog.dismiss())
+                .create().show();
     }
 
     //点击屏幕的返回键

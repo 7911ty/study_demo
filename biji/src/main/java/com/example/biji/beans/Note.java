@@ -17,7 +17,7 @@ public class Note {
 
     @Override
     public String toString() {
-        return content + "\n" + time.substring(5, 16) + " " + id;
+        return content + " " + time.substring(5, 16) + " " + id;
     }
 
     public long getId() {
