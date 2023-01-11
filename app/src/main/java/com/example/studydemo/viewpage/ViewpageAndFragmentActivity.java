@@ -8,9 +8,9 @@ import android.widget.LinearLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.base.ui.BaseActivity;
 import com.example.base.utils.StatusBarUtil;
 import com.example.studydemo.R;
-import com.example.studydemo.base.BaseActivity;
 import com.example.studydemo.ui.fragment.BlankFragment;
 
 import java.util.ArrayList;

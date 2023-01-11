@@ -23,7 +23,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class CameraPermissions extends AppCompatActivity {
+public class CameraActivity extends AppCompatActivity {
 
     private SurfaceView sfv_preview;
     private Button btn_take;
@@ -58,12 +58,10 @@ public class CameraPermissions extends AppCompatActivity {
             for (int i = 0; i < permissions.length; i++) {
                 if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
                     //已授权
-                    Toast.makeText(CameraPermissions.this, "已授权相机权限", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(CameraActivity.this, "已授权相机权限", Toast.LENGTH_SHORT).show();
                 } else {
                     //未授权
-                    Toast.makeText(CameraPermissions.this, "未授权相机权限", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(CameraActivity.this, "未授权相机权限", Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -75,14 +73,14 @@ public class CameraPermissions extends AppCompatActivity {
         sfv_preview.getHolder().addCallback(cpHolderCallback);
 
         if (PackageManager.PERMISSION_GRANTED == ActivityCompat
-                .checkSelfPermission(CameraPermissions.this, Manifest.permission.CAMERA)) {
+                .checkSelfPermission(CameraActivity.this, Manifest.permission.CAMERA)) {
             //已授权
-            Toast.makeText(CameraPermissions.this, "已授权相机权限", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CameraActivity.this, "已授权相机权限", Toast.LENGTH_SHORT).show();
         } else {
             //未授权
-            Toast.makeText(CameraPermissions.this, "未授权相机权限", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CameraActivity.this, "未授权相机权限", Toast.LENGTH_SHORT).show();
             String[] permissions = new String[]{Manifest.permission.CAMERA};
-            ActivityCompat.requestPermissions(CameraPermissions.this, permissions, 1);
+            ActivityCompat.requestPermissions(CameraActivity.this, permissions, 1);
         }
         btn_take.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,11 +90,11 @@ public class CameraPermissions extends AppCompatActivity {
                     public void onPictureTaken(byte[] data, Camera camera) {
                         String path = "";
                         if ((path = saveFile(data)) != null) {
-                            Intent it = new Intent(CameraPermissions.this, PreviewActivity.class);
+                            Intent it = new Intent(CameraActivity.this, PreviewActivity.class);
                             it.putExtra("path", path);
                             startActivity(it);
                         } else {
-                            Toast.makeText(CameraPermissions.this, "保存照片失败", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CameraActivity.this, "保存照片失败", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

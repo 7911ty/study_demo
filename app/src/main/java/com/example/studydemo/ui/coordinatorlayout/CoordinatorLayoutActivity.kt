@@ -5,9 +5,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.example.base.ui.BaseActivity
 import com.example.studydemo.R
 import com.example.studydemo.adapter.CoordinatorLayoutAdapter
-import com.example.studydemo.base.BaseActivity
 import com.example.studydemo.bean.coordinator.CoordinatorBean
 import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.activity_coordinatorlayout.*

@@ -5,9 +5,8 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import com.example.base.ui.BaseActivity
 import com.example.studydemo.R
-import com.example.studydemo.base.BaseActivity
-import com.example.base.utils.StatusBarUtil
 import kotlinx.android.synthetic.main.activity_storage1.*
 import java.io.BufferedReader
 import java.io.BufferedWriter

@@ -15,7 +15,7 @@ import com.example.studydemo.base.baseadapter.base.ViewHolder;
 import com.example.studydemo.bean.MainBean;
 import com.example.studydemo.ui.SecondActivity;
 import com.example.studydemo.ui.camera.OpenCameraActivity;
-import com.example.studydemo.ui.carema.CameraPermissions;
+import com.example.studydemo.ui.carema.Camera2Activity;
 import com.example.studydemo.ui.coordinatorlayout.MyCoordinatorLayoutActivity;
 import com.example.studydemo.ui.diyui.DiyViewActivity;
 import com.example.studydemo.ui.diyui.leafloading.LeafLoadingActivity;
@@ -74,7 +74,7 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
                             intent = new Intent(mContext, MyBiJiActivity.class);
                             break;
                         case "bt_3_camera":
-                            intent = new Intent(mContext, CameraPermissions.class);
+                            intent = new Intent(mContext, Camera2Activity.class);
                             break;
                         case "bt_4_fragment":
                             intent = new Intent(mContext, MyFragmentActivity.class);

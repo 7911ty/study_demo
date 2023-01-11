@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.base.ui.BaseActivity;
 import com.example.studydemo.R;
-import com.example.studydemo.base.BaseActivity;
 
 public class HandlerActivity extends BaseActivity implements View.OnClickListener {
 

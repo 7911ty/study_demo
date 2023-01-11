@@ -2,8 +2,8 @@ package com.example.studydemo.webview;
 
 import android.view.View;
 
+import com.example.base.ui.BaseActivity;
 import com.example.studydemo.R;
-import com.example.studydemo.base.BaseActivity;
 
 public class MyWebViewActivity  extends BaseActivity {
     @Override

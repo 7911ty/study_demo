@@ -11,8 +11,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.base.ui.BaseActivity;
 import com.example.studydemo.R;
-import com.example.studydemo.base.BaseActivity;
 import com.example.studydemo.ui.fragment.bean.Student;
 
 public class MyFragmentActivity extends BaseActivity implements View.OnClickListener {

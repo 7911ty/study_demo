@@ -4,9 +4,9 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.view.View;
 
+import com.example.base.ui.BaseActivity;
 import com.example.base.utils.StatusBarUtil;
 import com.example.studydemo.R;
-import com.example.studydemo.base.BaseActivity;
 
 public class SecondActivity extends BaseActivity {
 

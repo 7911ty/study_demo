@@ -1,6 +1,8 @@
 package com.example.base.utils;
 
 import android.content.Context;
+import android.util.DisplayMetrics;
+import android.view.WindowManager;
 
 /**
  * dp、sp 转换为 px 的工具类
@@ -40,4 +42,21 @@ public class DisplayUtil {
         final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
         return (int) (spValue * fontScale + 0.5f);
     }
+
+    /**
+     * 得到手机屏幕的宽度, pix单位
+     */
+    public int getScreenWidth(Context context) {
+        WindowManager manager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics dm = new DisplayMetrics();
+        manager.getDefaultDisplay().getMetrics(dm);
+        return dm.widthPixels;
+    }
+    public int getScreenHeight(Context context){
+        WindowManager manager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics dm = new DisplayMetrics();
+        manager.getDefaultDisplay().getMetrics(dm);
+       return dm.heightPixels;
+    }
+
 }

@@ -3,9 +3,9 @@ package com.example.studydemo.ui.receiver;
 import android.content.Intent;
 import android.widget.Button;
 
+import com.example.base.ui.BaseActivity;
 import com.example.base.utils.StatusBarUtil;
 import com.example.studydemo.R;
-import com.example.studydemo.base.BaseActivity;
 
 /**
  * 广播

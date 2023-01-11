@@ -3,8 +3,8 @@ package com.example.studydemo.ui.okhttp
 import android.util.Log
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import com.example.base.ui.BaseActivity
 import com.example.studydemo.R
-import com.example.studydemo.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_my_web_view.*
 
 class MyWebViewActivity : BaseActivity() {

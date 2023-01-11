@@ -85,11 +85,14 @@ public class MyBiJiActivity extends BaseActivity implements AdapterView.OnItemCl
             }
 
             @Override
-            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+            public boolean onMove(RecyclerView recyclerView,
+                                  RecyclerView.ViewHolder viewHolder,
+                                  RecyclerView.ViewHolder target) {
                 Log.d(TAG, "onMove: noteList1 = " + noteList);
                 //滑动事件
-                Collections.swap(noteList,viewHolder.getAdapterPosition(),target.getAdapterPosition());
-                adapter.notifyItemMoved(viewHolder.getAdapterPosition(),target.getAdapterPosition());
+                Collections.swap(noteList, viewHolder.getAdapterPosition(), target.getAdapterPosition());
+                adapter.notifyItemMoved(viewHolder.getAdapterPosition(), target.getAdapterPosition());
+                // 刷新数据库
                 Log.d(TAG, "onMove: noteList2 = " + noteList);
                 Note oldNote = noteList.get(viewHolder.getAdapterPosition());
                 Note targetNote = noteList.get(target.getAdapterPosition());

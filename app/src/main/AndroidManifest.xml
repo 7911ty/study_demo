@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
+            android:name=".ui.carema.Camera2Activity"
+            android:exported="false" />
+        <activity
             android:name=".ui.okhttp.NetworkActivity"
             android:exported="false" />
         <activity
@@ -90,8 +93,7 @@
         </activity>
         <activity android:name="com.example.studydemo.ui.listview.MyListViewActivity" />
         <activity android:name="com.example.studydemo.ui.recyclerview.MyRecyclerViewActivity" />
-        <activity android:name="com.example.studydemo.ui.carema.CameraPermissions" />
-        <activity android:name="com.example.studydemo.ui.carema.PreviewActivity" />
+        <activity android:name=".ui.carema.PreviewActivity" />
         <activity android:name="com.example.studydemo.ui.fragment.MyFragmentActivity" />
         <activity android:name="com.example.studydemo.viewpage.ViewpageAndFragmentActivity" />
         <activity android:name="com.example.studydemo.ui.eventbus.EventBusActivity1" />

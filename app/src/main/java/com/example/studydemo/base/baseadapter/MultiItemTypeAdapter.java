@@ -90,6 +90,9 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public int getItemCount() {
+        if (mDatas == null || mDatas.size() == 0) {
+            return 0;
+        }
         int itemCount = mDatas.size();
         return itemCount;
     }
@@ -111,6 +114,11 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
 
     protected boolean useItemViewDelegateManager() {
         return mItemViewDelegateManager.getItemViewDelegateCount() > 0;
+    }
+
+    public void notifyDataSetChanged(List<T> datas) {
+        mDatas = datas;
+        notifyDataSetChanged();
     }
 
     public interface OnItemClickListener {

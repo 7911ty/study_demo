@@ -5,9 +5,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.base.ui.BaseActivity;
 import com.example.base.utils.StatusBarUtil;
 import com.example.studydemo.R;
-import com.example.studydemo.base.BaseActivity;
 import com.example.studydemo.bean.MessageWrap;
 
 import org.greenrobot.eventbus.EventBus;

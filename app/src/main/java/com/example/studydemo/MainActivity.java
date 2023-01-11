@@ -9,8 +9,8 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.base.ui.BaseActivity;
 import com.example.base.utils.StatusBarUtil;
-import com.example.studydemo.base.BaseActivity;
 import com.example.studydemo.bean.MainBean;
 import com.example.studydemo.ui.receiver.MainAdapter;
 
@@ -62,7 +62,7 @@ public class MainActivity extends BaseActivity {
         mainBean.setName("笔记");
         arrayList.add(mainBean);
         mainBean = new MainBean();
-        mainBean.setName("bt_camera");
+        mainBean.setName("bt_3_camera");
         arrayList.add(mainBean);
         mainBean = new MainBean();
         mainBean.setName("bt_4_fragment");
