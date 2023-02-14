@@ -109,6 +109,12 @@ public class MainActivity extends BaseActivity {
         mainBean = new MainBean();
         mainBean.setName("bt_17_mycoordinator");
         arrayList.add(mainBean);
+        mainBean = new MainBean();
+        mainBean.setName("bt_18_activity的启动模式");
+        arrayList.add(mainBean);
+        mainBean = new MainBean();
+        mainBean.setName("bt_19_start_service");
+        arrayList.add(mainBean);
         MainAdapter mainAdapter = new MainAdapter(this, arrayList);
         main_rv.setLayoutManager(new LinearLayoutManager(this));
         main_rv.setAdapter(mainAdapter);

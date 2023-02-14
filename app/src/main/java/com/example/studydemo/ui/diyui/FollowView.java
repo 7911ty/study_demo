@@ -174,7 +174,6 @@ public class FollowView extends View {
            onCurrentTimeListener.currentTime(currentTime);
         }
         canvas.drawText(currentTime, 0, 50, textPaint);
-
     }
     //获取时间监听
     private OnCurrentTimeListener onCurrentTimeListener;

@@ -1,4 +1,4 @@
-package com.example.studydemo.bean;
+package com.example.studydemo.bean.album;
 
 public class ImageInfo {
     private String imagePath;
@@ -7,6 +7,24 @@ public class ImageInfo {
     private String width;
     private String size;
     private String title;
+    private String bucketId;
+    private String bucketName;
+
+    public String getBucketId() {
+        return bucketId;
+    }
+
+    public void setBucketId(String bucketId) {
+        this.bucketId = bucketId;
+    }
+
+    public String getBucketName() {
+        return bucketName;
+    }
+
+    public void setBucketName(String bucketName) {
+        this.bucketName = bucketName;
+    }
 
     public String getImagePath() {
         return imagePath;

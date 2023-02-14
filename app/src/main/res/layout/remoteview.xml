@@ -28,7 +28,7 @@
 <!--            android:layout_height="wrap_content" />-->
 
         <Chronometer
-            android:visibility="gone"
+            android:visibility="visible"
             android:id="@+id/chronometer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

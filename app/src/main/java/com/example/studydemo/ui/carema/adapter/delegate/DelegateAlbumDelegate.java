@@ -9,7 +9,7 @@ import com.example.base.utils.GlideUtils;
 import com.example.studydemo.R;
 import com.example.studydemo.base.baseadapter.base.ItemViewDelegate;
 import com.example.studydemo.base.baseadapter.base.ViewHolder;
-import com.example.studydemo.bean.ImageInfo;
+import com.example.studydemo.bean.album.ImageInfo;
 
 public class DelegateAlbumDelegate implements ItemViewDelegate<ImageInfo> {
     private Context mContext;

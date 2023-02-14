@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -21,7 +22,8 @@ import com.example.studydemo.R;
 /**
  * 开启悬浮窗
  */
-public class FloatWinfowServices extends Service {
+public class FloatWindowServices extends Service {
+    private static final String TAG = "FloatWinfowServices";
     private WindowManager winManager;
     private WindowManager.LayoutParams wmParams;
     private LayoutInflater inflater;
@@ -35,21 +37,29 @@ public class FloatWinfowServices extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
+        Log.d(TAG, "onBind: ");
         initWindow();
         //悬浮框点击事件的处理
         initFloating();
         return new MyBinder();
     }
 
+    @Override
+    public boolean onUnbind(Intent intent) {
+        Log.d(TAG, "onUnbind: ");
+        return super.onUnbind(intent);
+    }
+
     public class MyBinder extends Binder {
-        public FloatWinfowServices getService() {
-            return FloatWinfowServices.this;
+        public FloatWindowServices getService() {
+            return FloatWindowServices.this;
         }
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
+        Log.d(TAG, "onCreate: ");
     }
 
     /**
@@ -60,7 +70,7 @@ public class FloatWinfowServices extends Service {
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FloatWinfowServices.this, Main2Activity.class);
+                Intent intent = new Intent(FloatWindowServices.this, XuanFuActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
@@ -159,6 +169,7 @@ public class FloatWinfowServices extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        Log.d(TAG, "onDestroy: ");
         winManager.removeView(mFloatingLayout);
     }
 }

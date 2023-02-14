@@ -25,8 +25,8 @@ import org.greenrobot.eventbus.EventBus;
 /**
  * 悬浮demo
  */
-public class Main2Activity extends AppCompatActivity {
-
+public class XuanFuActivity extends AppCompatActivity {
+    private static final String TAG = "XuanFuActivity";
     private Chronometer chronometer;
     private boolean hasBind = false;
     private long rangeTime;
@@ -42,7 +42,7 @@ public class Main2Activity extends AppCompatActivity {
     public void zoom(View v) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (!Settings.canDrawOverlays(this)) {
-                Toast.makeText(this, "当前无权限，请授权", Toast.LENGTH_SHORT);
+                Toast.makeText(this, "当前无权限，请授权", Toast.LENGTH_SHORT).show();
                 new GlobalDialogSingle(this, "", "当前未获取悬浮窗权限", "去开启", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -53,7 +53,7 @@ public class Main2Activity extends AppCompatActivity {
 
             } else {
                 moveTaskToBack(true);
-                Intent intent = new Intent(Main2Activity.this, FloatWinfowServices.class);
+                Intent intent = new Intent(XuanFuActivity.this, FloatWindowServices.class);
                 hasBind = bindService(intent, mVideoServiceConnection, Context.BIND_AUTO_CREATE);
             }
         }
@@ -62,13 +62,15 @@ public class Main2Activity extends AppCompatActivity {
     ServiceConnection mVideoServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
+            Log.d(TAG, "onServiceConnected: ");
             // 获取服务的操作对象
-            FloatWinfowServices.MyBinder binder = (FloatWinfowServices.MyBinder) service;
+            FloatWindowServices.MyBinder binder = (FloatWindowServices.MyBinder) service;
             binder.getService();
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
+            Log.d(TAG, "onServiceDisconnected: ");
         }
     };
 
@@ -79,11 +81,10 @@ public class Main2Activity extends AppCompatActivity {
                 if (!Settings.canDrawOverlays(this)) {
                     Toast.makeText(this, "授权失败", Toast.LENGTH_SHORT).show();
                 } else {
-
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            Intent intent = new Intent(Main2Activity.this, FloatWinfowServices.class);
+                            Intent intent = new Intent(XuanFuActivity.this, FloatWindowServices.class);
                             intent.putExtra("rangeTime", rangeTime);
                             hasBind = bindService(intent, mVideoServiceConnection, Context.BIND_AUTO_CREATE);
                             moveTaskToBack(true);

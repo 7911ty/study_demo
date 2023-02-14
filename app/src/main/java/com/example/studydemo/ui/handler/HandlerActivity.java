@@ -14,6 +14,10 @@ import androidx.annotation.NonNull;
 import com.example.base.ui.BaseActivity;
 import com.example.studydemo.R;
 
+/**
+ * https://blog.csdn.net/qingtiantianqing/article/details/72783952
+ * https://blog.csdn.net/songzi1228/article/details/100560031
+ */
 public class HandlerActivity extends BaseActivity implements View.OnClickListener {
 
     private TextView tv_show;
@@ -49,16 +53,13 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.bt_handler) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    String s = setText();
-                    Message message = new Message();
-                    message.what = 0;
-                    message.obj = s;
-                    handler.sendMessage(message);
-                }
-            }).start();
+            handler.postDelayed(() -> {
+                String s = setText();
+                Message message = new Message();
+                message.what = 0;
+                message.obj = s;
+                handler.sendMessage(message);
+            },1000);
             Log.d(TAG, "onClick: button点击");
             Toast.makeText(HandlerActivity.this,"button点击",Toast.LENGTH_LONG).show();
 

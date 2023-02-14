@@ -13,17 +13,19 @@ import com.example.studydemo.base.baseadapter.MultiItemTypeAdapter;
 import com.example.studydemo.base.baseadapter.base.ItemViewDelegate;
 import com.example.studydemo.base.baseadapter.base.ViewHolder;
 import com.example.studydemo.bean.MainBean;
+import com.example.studydemo.service.SimpleServiceActivity;
 import com.example.studydemo.ui.SecondActivity;
 import com.example.studydemo.ui.camera.OpenCameraActivity;
-import com.example.studydemo.ui.carema.Camera2Activity;
+import com.example.studydemo.ui.carema.Camera3Activity;
 import com.example.studydemo.ui.coordinatorlayout.MyCoordinatorLayoutActivity;
 import com.example.studydemo.ui.diyui.DiyViewActivity;
 import com.example.studydemo.ui.diyui.leafloading.LeafLoadingActivity;
-import com.example.studydemo.ui.diyui.suspension.Main2Activity;
+import com.example.studydemo.ui.diyui.suspension.XuanFuActivity;
 import com.example.studydemo.ui.eventbus.EventBusActivity1;
 import com.example.studydemo.ui.eventbus.IntentMsgActivity1;
 import com.example.studydemo.ui.fragment.MyFragmentActivity;
 import com.example.studydemo.ui.handler.HandlerActivity;
+import com.example.studydemo.ui.launchmode.LaunchModeActivity;
 import com.example.studydemo.ui.listview.MyListViewActivity;
 import com.example.studydemo.ui.okhttp.NetworkActivity;
 import com.example.studydemo.ui.recyclerview.MyBaseAdapterActivity;
@@ -74,7 +76,7 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
                             intent = new Intent(mContext, MyBiJiActivity.class);
                             break;
                         case "bt_3_camera":
-                            intent = new Intent(mContext, Camera2Activity.class);
+                            intent = new Intent(mContext, Camera3Activity.class);
                             break;
                         case "bt_4_fragment":
                             intent = new Intent(mContext, MyFragmentActivity.class);
@@ -110,7 +112,7 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
                             intent = new Intent(mContext, NetworkActivity.class);
                             break;
                         case "bt_14_xuanfuchuang":
-                            intent = new Intent(mContext, Main2Activity.class);
+                            intent = new Intent(mContext, XuanFuActivity.class);
                             break;
                         case "bt_15_handler":
                             intent = new Intent(mContext, HandlerActivity.class);
@@ -120,6 +122,12 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
                             break;
                         case "bt_17_mycoordinator":
                             intent = new Intent(mContext, MyCoordinatorLayoutActivity.class);
+                            break;
+                        case "bt_18_activity的启动模式":
+                            intent = new Intent(mContext, LaunchModeActivity.class);
+                            break;
+                        case "bt_19_start_service":
+                            intent = new Intent(mContext, SimpleServiceActivity.class);
                             break;
                     }
                     mContext.startActivity(intent);
