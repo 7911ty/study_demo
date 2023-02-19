@@ -24,11 +24,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
-            android:name=".SimpleServiceActivity"
+            android:name=".ui.animation.AnimationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".service.SimpleServiceActivity"
             android:exported="false" />
 
         <service
-            android:name=".SimpleService"
+            android:name=".service.SimpleService"
             android:enabled="true"
             android:exported="true" />
 
@@ -131,7 +134,7 @@
         <activity android:name="com.example.studydemo.ui.camera.CameraActivity" />
         <activity android:name="com.example.studydemo.ui.diyui.DiyViewActivity" />
         <activity android:name="com.example.studydemo.ui.diyui.leafloading.LeafLoadingActivity" />
-        <activity android:name=".OkhttpActivity" />
+        <activity android:name=".ui.okhttp.OkhttpActivity" />
         <activity android:name=".ui.handler.HandlerActivity" />
         <activity
             android:name=".ui.diyui.suspension.XuanFuActivity"

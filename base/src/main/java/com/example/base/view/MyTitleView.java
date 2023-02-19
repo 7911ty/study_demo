@@ -22,6 +22,14 @@ public class MyTitleView extends LinearLayout {
     private ImageView right1;
     private ImageView right2;
 
+    public ImageView getRight1() {
+        return right1;
+    }
+
+    public ImageView getRight2() {
+        return right2;
+    }
+
     private TitleClickListener titleClickListener;
 
     public void setTitleClickListener(TitleClickListener titleClickListener) {
@@ -48,7 +56,12 @@ public class MyTitleView extends LinearLayout {
         right1 = root.findViewById(R.id.iv_right1);
         right2 = root.findViewById(R.id.iv_right2);
         ImageView blackIv = root.findViewById(R.id.black_iv);
-        blackIv.setOnClickListener(view -> titleClickListener.blackClick());
+        blackIv.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                titleClickListener.blackClick();
+            }
+        });
         right1.setOnClickListener(view -> titleClickListener.right1Click());
         right2.setOnClickListener(view -> titleClickListener.right2Click());
         addView(root);
@@ -89,14 +102,5 @@ public class MyTitleView extends LinearLayout {
         right2.setImageDrawable(drawable);
     }
 
-    public abstract static class TitleClickListener {
-        public void blackClick() {
-        }
 
-        public void right1Click() {
-        }
-
-        public void right2Click() {
-        }
-    }
 }

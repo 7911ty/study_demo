@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -115,8 +116,17 @@ public class MainActivity extends BaseActivity {
         mainBean = new MainBean();
         mainBean.setName("bt_19_start_service");
         arrayList.add(mainBean);
+        mainBean = new MainBean();
+        mainBean.setName("bt_20_view_animation");
+        arrayList.add(mainBean);
         MainAdapter mainAdapter = new MainAdapter(this, arrayList);
         main_rv.setLayoutManager(new LinearLayoutManager(this));
         main_rv.setAdapter(mainAdapter);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy: ");
     }
 }

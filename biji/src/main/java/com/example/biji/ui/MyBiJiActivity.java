@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.base.ui.BaseActivity;
 import com.example.base.view.MyTitleView;
+import com.example.base.view.TitleClickListener;
 import com.example.biji.R;
 import com.example.biji.adapter.NoteAdapter;
 import com.example.biji.beans.Note;
@@ -124,18 +126,22 @@ public class MyBiJiActivity extends BaseActivity implements AdapterView.OnItemCl
     }
 
     private void initTitleBar() {
-        myTitleView.setTitleClickListener(new MyTitleView.TitleClickListener() {
+        ImageView right1 = myTitleView.getRight1();
+        ImageView right2 = myTitleView.getRight2();
+        myTitleView.setTitleClickListener(new TitleClickListener(this) {
             @Override
             public void right1Click() {
+                if (right1 != null) right1.setVisibility(View.VISIBLE);
                 Intent intent = new Intent(MyBiJiActivity.this, SearchNoteActivity.class);
                 startActivity(intent);
             }
 
             @Override
             public void right2Click() {
+                if (right2 != null)   right2.setVisibility(View.VISIBLE);
                 showDelegateDialog();
             }
-        });
+        } );
     }
 
     //接受startActivityForResult的结果

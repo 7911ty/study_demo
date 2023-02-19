@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AlertDialog;
 
 import com.example.base.ui.BaseActivity;
 import com.example.base.view.MyTitleView;
+import com.example.base.view.TitleClickListener;
 import com.example.biji.R;
 
 import java.text.SimpleDateFormat;
@@ -51,7 +53,8 @@ public class NoteEditActivity extends BaseActivity {
     }
 
     private void initTitleBar() {
-        myTitleView.setTitleClickListener(new MyTitleView.TitleClickListener() {
+        ImageView right2 = myTitleView.getRight2();
+        myTitleView.setTitleClickListener(new TitleClickListener(this) {
             @Override
             public void blackClick() {
                 autoSetMassage();
@@ -60,6 +63,7 @@ public class NoteEditActivity extends BaseActivity {
             }
             @Override
             public void right2Click() {
+                if (right2 != null)   right2.setVisibility(View.VISIBLE);
                 showDelegateDialog();
             }
         });

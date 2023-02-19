@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.base.utils.StatusBarUtil;
 import com.example.base.view.MyTitleView;
+import com.example.base.view.TitleClickListener;
 
 public abstract class BaseActivity extends AppCompatActivity {
     //获取TAG的activity名称
@@ -47,6 +48,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             myTitleView = new MyTitleView(this);
             String title = initTitleText();
             myTitleView.setText(TextUtils.isEmpty(title) ? this.getClass().getSimpleName() : title);
+            myTitleView.setTitleClickListener(new MyTitleClickListener());
             viewGroup.addView(myTitleView);
             StatusBarUtil.setActivityViewInBarBottom(this, myTitleView);
             StatusBarUtil.setTranslucentStatus(this);
@@ -203,5 +205,26 @@ public abstract class BaseActivity extends AppCompatActivity {
         //activity管理
 //        ActivityCollector.removeActivity(this);
 //        ActivityCollector.finishAll();
+    }
+
+    private class MyTitleClickListener extends TitleClickListener {
+        public MyTitleClickListener() {
+            super(BaseActivity.this);
+        }
+
+        @Override
+        public void blackClick() {
+            super.blackClick();
+        }
+
+        @Override
+        public void right1Click() {
+            super.right1Click();
+        }
+
+        @Override
+        public void right2Click() {
+            super.right2Click();
+        }
     }
 }

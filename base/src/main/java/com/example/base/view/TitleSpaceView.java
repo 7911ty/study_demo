@@ -32,7 +32,7 @@ public class TitleSpaceView extends LinearLayout {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int height = StatusBarUtil.getStatusBar((Activity) mContent) + DisplayUtil.dip2px(mContent, 42);
+        int height = DisplayUtil.dip2px(mContent, 68);
         Log.d(TAG, "onMeasure: height  = " + height );
         setMeasuredDimension(ViewGroup.LayoutParams.MATCH_PARENT, height);
     }

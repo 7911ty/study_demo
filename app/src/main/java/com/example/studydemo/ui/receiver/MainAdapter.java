@@ -15,6 +15,7 @@ import com.example.studydemo.base.baseadapter.base.ViewHolder;
 import com.example.studydemo.bean.MainBean;
 import com.example.studydemo.service.SimpleServiceActivity;
 import com.example.studydemo.ui.SecondActivity;
+import com.example.studydemo.ui.animation.AnimationActivity;
 import com.example.studydemo.ui.camera.OpenCameraActivity;
 import com.example.studydemo.ui.carema.Camera3Activity;
 import com.example.studydemo.ui.coordinatorlayout.MyCoordinatorLayoutActivity;
@@ -128,6 +129,8 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
                             break;
                         case "bt_19_start_service":
                             intent = new Intent(mContext, SimpleServiceActivity.class);
+                            break; case "bt_20_view_animation":
+                            intent = new Intent(mContext, AnimationActivity.class);
                             break;
                     }
                     mContext.startActivity(intent);
@@ -140,4 +143,5 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         super.setOnItemClickListener(onItemClickListener);
     }
+
 }
