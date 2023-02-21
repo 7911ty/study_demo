@@ -23,8 +23,8 @@
 
     <ImageView
         android:id="@+id/iv_photo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:scaleType="fitCenter"
         android:src="@drawable/ceshi"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,9 +42,9 @@
 
     <ImageView
         android:id="@+id/iv_frame_animation"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_frame_animation"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_frame_animation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
