@@ -59,7 +59,7 @@ public class OkhttpActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.button_get:
                 Log.d(TAG, "onClick: get请求");
 //                get("http://192.168.1.108:8080/myWeb/book/allbook", new Callback() {
-                get("www.baidu.com", new Callback() {
+                get("http://www.baidu.com", new Callback() {
                     @Override
                     public void onFailure(@NonNull Call call, @NonNull IOException e) {
                         Log.d(TAG, "onFailure: e = " + e.getMessage());

@@ -1,6 +1,5 @@
 package com.example.base.view;
 
-import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -10,7 +9,6 @@ import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 
 import com.example.base.utils.DisplayUtil;
-import com.example.base.utils.StatusBarUtil;
 
 public class TitleSpaceView extends LinearLayout {
     private static final String TAG = "TitleSpaceView";
@@ -32,7 +30,14 @@ public class TitleSpaceView extends LinearLayout {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int height = DisplayUtil.dip2px(mContent, 68);
+        int statusBarHeight1 = 0;
+//获取status_bar_height资源的ID
+        int resourceId =getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            //根据资源ID获取响应的尺寸值
+            statusBarHeight1 = getResources().getDimensionPixelSize(resourceId);
+        }
+        int height = DisplayUtil.dip2px(mContent, 48) + statusBarHeight1;
         Log.d(TAG, "onMeasure: height  = " + height );
         setMeasuredDimension(ViewGroup.LayoutParams.MATCH_PARENT, height);
     }

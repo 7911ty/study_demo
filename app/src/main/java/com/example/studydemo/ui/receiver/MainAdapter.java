@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.base.utils.ColorUtil;
+import com.example.base.utils.DisplayUtil;
 import com.example.biji.ui.MyBiJiActivity;
 import com.example.studydemo.R;
 import com.example.studydemo.base.baseadapter.MultiItemTypeAdapter;
@@ -58,7 +60,12 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
 
         @Override
         public void convert(ViewHolder holder, MainBean mainBean, int position) {
+            int screenWidth = DisplayUtil.getScreenWidth(mContext);
             Button button = holder.itemView.findViewById(R.id.main_bt);
+            ViewGroup.LayoutParams layoutParams = button.getLayoutParams();
+            layoutParams.width = screenWidth/2;
+            layoutParams.height = screenWidth/2;
+            button.setLayoutParams(layoutParams);
             button.setText(mainBean.getName());
             button.setBackgroundColor(ColorUtil.getColorByRgb(""));
             button.setOnClickListener(new View.OnClickListener() {

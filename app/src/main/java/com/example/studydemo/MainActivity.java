@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.base.ui.BaseActivity;
@@ -43,7 +43,8 @@ public class MainActivity extends BaseActivity {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.intent.action.TIME_TICK");
         timeChangeReceiver = new TimeChangeReceiver();
-        registerReceiver(timeChangeReceiver, intentFilter);
+        // 注册广播
+//        registerReceiver(timeChangeReceiver, intentFilter);
     }
 
     class TimeChangeReceiver extends BroadcastReceiver {
@@ -120,7 +121,7 @@ public class MainActivity extends BaseActivity {
         mainBean.setName("bt_20_view_animation");
         arrayList.add(mainBean);
         MainAdapter mainAdapter = new MainAdapter(this, arrayList);
-        main_rv.setLayoutManager(new LinearLayoutManager(this));
+        main_rv.setLayoutManager(new GridLayoutManager(this,2));
         main_rv.setAdapter(mainAdapter);
     }
 

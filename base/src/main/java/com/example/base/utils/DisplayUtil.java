@@ -46,7 +46,7 @@ public class DisplayUtil {
     /**
      * 得到手机屏幕的宽度, pix单位
      */
-    public int getScreenWidth(Context context) {
+    public static int getScreenWidth(Context context) {
         WindowManager manager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics dm = new DisplayMetrics();
         manager.getDefaultDisplay().getMetrics(dm);
