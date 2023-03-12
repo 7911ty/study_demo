@@ -119,6 +119,8 @@ public class MainActivity extends BaseActivity {
         arrayList.add(mainBean);
         mainBean = new MainBean();
         mainBean.setName("bt_20_view_animation");
+        arrayList.add(mainBean); mainBean = new MainBean();
+        mainBean.setName("bt_21_约束布局");
         arrayList.add(mainBean);
         MainAdapter mainAdapter = new MainAdapter(this, arrayList);
         main_rv.setLayoutManager(new GridLayoutManager(this,2));

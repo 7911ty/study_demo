@@ -17,7 +17,7 @@ public class BaseApplication extends Application {
         mMainTid = android.os.Process.myTid();
         mHandler = new Handler();
         super.onCreate();
-        initLeakCanary();
+//        initLeakCanary();
     }
     private void initLeakCanary(){
         if (LeakCanary.isInAnalyzerProcess(this)) {

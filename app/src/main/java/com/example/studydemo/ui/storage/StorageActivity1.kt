@@ -68,5 +68,4 @@ class StorageActivity1 : BaseActivity(){
             Log.d(TAG, "save: e = " + e.message)
         }
     }
-
 }

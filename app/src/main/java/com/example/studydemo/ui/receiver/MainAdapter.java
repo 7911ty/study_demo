@@ -20,6 +20,7 @@ import com.example.studydemo.ui.SecondActivity;
 import com.example.studydemo.ui.animation.AnimationActivity;
 import com.example.studydemo.ui.camera.OpenCameraActivity;
 import com.example.studydemo.ui.carema.Camera3Activity;
+import com.example.studydemo.ui.constraintlayout.ConstraintLayoutActivity;
 import com.example.studydemo.ui.coordinatorlayout.MyCoordinatorLayoutActivity;
 import com.example.studydemo.ui.diyui.DiyViewActivity;
 import com.example.studydemo.ui.diyui.leafloading.LeafLoadingActivity;
@@ -63,8 +64,8 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
             int screenWidth = DisplayUtil.getScreenWidth(mContext);
             Button button = holder.itemView.findViewById(R.id.main_bt);
             ViewGroup.LayoutParams layoutParams = button.getLayoutParams();
-            layoutParams.width = screenWidth/2;
-            layoutParams.height = screenWidth/2;
+            layoutParams.width = screenWidth / 2;
+            layoutParams.height = screenWidth / 2;
             button.setLayoutParams(layoutParams);
             button.setText(mainBean.getName());
             button.setBackgroundColor(ColorUtil.getColorByRgb(""));
@@ -136,8 +137,12 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
                             break;
                         case "bt_19_start_service":
                             intent = new Intent(mContext, SimpleServiceActivity.class);
-                            break; case "bt_20_view_animation":
+                            break;
+                        case "bt_20_view_animation":
                             intent = new Intent(mContext, AnimationActivity.class);
+                            break;
+                        case "bt_21_约束布局":
+                            intent = new Intent(mContext, ConstraintLayoutActivity.class);
                             break;
                     }
                     mContext.startActivity(intent);

@@ -160,6 +160,7 @@
         <activity
             android:name=".ui.launchmode.SingleInstanceActivity"
             android:launchMode="singleInstance" />
+        <activity android:name=".ui.constraintlayout.ConstraintLayoutActivity" />
     </application>
 
 </manifest>
