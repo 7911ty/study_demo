@@ -37,7 +37,7 @@ public class TitleSpaceView extends LinearLayout {
             //根据资源ID获取响应的尺寸值
             statusBarHeight1 = getResources().getDimensionPixelSize(resourceId);
         }
-        int height = DisplayUtil.dip2px(mContent, 48) + statusBarHeight1;
+        int height = DisplayUtil.dip2px(mContent, 42) + statusBarHeight1;
         Log.d(TAG, "onMeasure: height  = " + height );
         setMeasuredDimension(ViewGroup.LayoutParams.MATCH_PARENT, height);
     }

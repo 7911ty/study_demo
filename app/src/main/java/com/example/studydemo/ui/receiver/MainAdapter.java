@@ -16,7 +16,7 @@ import com.example.studydemo.base.baseadapter.base.ItemViewDelegate;
 import com.example.studydemo.base.baseadapter.base.ViewHolder;
 import com.example.studydemo.bean.MainBean;
 import com.example.studydemo.service.SimpleServiceActivity;
-import com.example.studydemo.ui.SecondActivity;
+import com.example.studydemo.ui.DialogActivity;
 import com.example.studydemo.ui.animation.AnimationActivity;
 import com.example.studydemo.ui.camera.OpenCameraActivity;
 import com.example.studydemo.ui.carema.Camera3Activity;
@@ -106,7 +106,7 @@ public class MainAdapter extends MultiItemTypeAdapter<MainBean> {
                             intent = new Intent(mContext, MyBaseAdapterActivity.class);
                             break;
                         case "bt_9_dialog":
-                            intent = new Intent(mContext, SecondActivity.class);
+                            intent = new Intent(mContext, DialogActivity.class);
                             break;
                         case "bt_10_camera":
                             intent = new Intent(mContext, OpenCameraActivity.class);

@@ -78,7 +78,7 @@
         </provider>
 
         <activity
-            android:name="com.example.studydemo.ui.SecondActivity"
+            android:name="com.example.studydemo.ui.DialogActivity"
             android:exported="false" />
 
         <receiver
