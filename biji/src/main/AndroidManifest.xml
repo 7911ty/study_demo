@@ -7,8 +7,7 @@
             android:name=".ui.SearchNoteActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MyBiJiActivity"
-            android:exported="true" />
+            android:name=".ui.MyBiJiActivity" />
         <activity android:name=".ui.NoteEditActivity" />
     </application>
 

@@ -27,7 +27,6 @@ import org.greenrobot.eventbus.EventBus;
  */
 public class XuanFuActivity extends AppCompatActivity {
     private static final String TAG = "XuanFuActivity";
-    private Chronometer chronometer;
     private boolean hasBind = false;
     private long rangeTime;
 
@@ -35,7 +34,6 @@ public class XuanFuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        EventBus.getDefault().postSticky(new Event(1));
     }
 
 
@@ -81,14 +79,11 @@ public class XuanFuActivity extends AppCompatActivity {
                 if (!Settings.canDrawOverlays(this)) {
                     Toast.makeText(this, "授权失败", Toast.LENGTH_SHORT).show();
                 } else {
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            Intent intent = new Intent(XuanFuActivity.this, FloatWindowServices.class);
-                            intent.putExtra("rangeTime", rangeTime);
-                            hasBind = bindService(intent, mVideoServiceConnection, Context.BIND_AUTO_CREATE);
-                            moveTaskToBack(true);
-                        }
+                    new Handler().postDelayed(() -> {
+                        Intent intent = new Intent(XuanFuActivity.this, FloatWindowServices.class);
+                        intent.putExtra("rangeTime", rangeTime);
+                        hasBind = bindService(intent, mVideoServiceConnection, Context.BIND_AUTO_CREATE);
+                        moveTaskToBack(true);
                     }, 1000);
                 }
             }

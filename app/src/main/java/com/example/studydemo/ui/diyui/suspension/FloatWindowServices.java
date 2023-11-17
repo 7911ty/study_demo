@@ -26,13 +26,9 @@ public class FloatWindowServices extends Service {
     private static final String TAG = "FloatWinfowServices";
     private WindowManager winManager;
     private WindowManager.LayoutParams wmParams;
-    private LayoutInflater inflater;
     //浮动布局
     private View mFloatingLayout;
     private LinearLayout linearLayout;
-    private Chronometer chronometer;
-    private long rangeTime;
-
 
     @Nullable
     @Override
@@ -78,12 +74,14 @@ public class FloatWindowServices extends Service {
         //悬浮框触摸事件，设置悬浮框可拖动
         linearLayout.setOnTouchListener(new FloatingListener());
     }
+
     //开始触控的坐标，移动时的坐标（相对于屏幕左上角的坐标）
     private int mTouchStartX, mTouchStartY, mTouchCurrentX, mTouchCurrentY;
     //开始时的坐标和结束时的坐标（相对于自身控件的坐标）
     private int mStartX, mStartY, mStopX, mStopY;
     //判断悬浮窗口是否移动，这里做个标记，防止移动后松手触发了点击事件
     private boolean isMove;
+
     private class FloatingListener implements View.OnTouchListener {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
@@ -134,7 +132,7 @@ public class FloatWindowServices extends Service {
         wmParams.x = winManager.getDefaultDisplay().getWidth();
         wmParams.y = 210;
         //得到容器，通过这个inflater来获得悬浮窗控件
-        inflater = LayoutInflater.from(getApplicationContext());
+        LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
         // 获取浮动窗口视图所在布局
         mFloatingLayout = inflater.inflate(R.layout.remoteview, null);
         // 添加悬浮窗的视图

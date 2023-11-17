@@ -33,7 +33,7 @@
         <service
             android:name=".service.SimpleService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="false" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -84,7 +84,7 @@
         <receiver
             android:name="com.example.studydemo.receiver.MyReceiver2"
             android:enabled="true"
-            android:exported="true">
+            android:exported="false">
             <intent-filter android:priority="100">
                 <action android:name="com.example.myhw2.MY_RECEIVER" />
             </intent-filter>
@@ -92,7 +92,7 @@
         <receiver
             android:name="com.example.studydemo.ui.receiver.AnotherBroadcastReceiver"
             android:enabled="true"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.example.myhw2.MY_RECEIVER" />
             </intent-filter>
@@ -100,7 +100,7 @@
         <receiver
             android:name="com.example.studydemo.receiver.MyReceiver"
             android:enabled="true"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
